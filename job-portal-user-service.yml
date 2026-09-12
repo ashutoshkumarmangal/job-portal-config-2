@@ -17,6 +17,10 @@ spring:
     password: ${DB_PASSWORD}
     driver-class-name: org.postgresql.Driver
 
+  flyway:
+    table: flyway_user_history
+    baseline-on-migrate: true
+    baseline-version: 1
 
 eureka:
   client:
