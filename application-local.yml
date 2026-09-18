@@ -1,0 +1,23 @@
+# Local development overrides.
+# Activate with: SPRING_PROFILES_ACTIVE=local
+# Everything not listed here falls back to the prod defaults in application.yml.
+
+spring:
+  datasource:
+    url: jdbc:postgresql://db:5432/job_portal_db
+    username: postgres
+    password: postgres
+    hikari:
+      data-source-properties:
+        ssl: false
+        sslmode: disable
+
+  kafka:
+    bootstrap-servers: kafka:9092
+    properties:
+      security.protocol: PLAINTEXT
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://discovery:8761/eureka/
